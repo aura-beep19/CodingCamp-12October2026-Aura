@@ -1,0 +1,75 @@
+	
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Personal Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  
+  <header class="header">
+    <div class="header-left">
+      <h1 id="greeting">Good morning!</h1>
+      <p id="datetime" class="datetime"></p>
+    </div>
+    <div class="header-right">
+      <button id="themeToggle" class="btn btn-icon" title="Toggle theme" aria-label="Toggle dark/light mode">🌙</button>
+    </div>
+  </header>
+
+  
+  <div id="setupModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <h2 id="modalTitle">Welcome! What's your name?</h2>
+      <input id="nameInput" type="text" placeholder="Enter your name…" maxlength="40" autocomplete="off" />
+      <button id="saveNameBtn" class="btn btn-primary">Save</button>
+    </div>
+  </div>
+
+  <main class="container">
+
+    
+    <section class="card" id="timerSection" aria-label="Focus Timer">
+      <h2 class="card-title">⏱ Focus Timer</h2>
+      <div class="timer-display" id="timerDisplay" aria-live="polite">25:00</div>
+      <div class="timer-controls">
+        <button id="startBtn"  class="btn btn-primary">Start</button>
+        <button id="stopBtn"   class="btn btn-secondary" disabled>Stop</button>
+        <button id="resetBtn"  class="btn btn-secondary">Reset</button>
+      </div>
+      <div class="timer-settings">
+        <label for="pomoDuration">Pomodoro duration (minutes):</label>
+        <input id="pomoDuration" type="number" min="1" max="90" value="25" />
+        <button id="applyDuration" class="btn btn-small">Apply</button>
+      </div>
+    </section>
+
+    
+    <section class="card" id="todoSection" aria-label="To-Do List">
+      <h2 class="card-title">✅ To-Do List</h2>
+      <div class="todo-input-row">
+        <input id="todoInput" type="text" placeholder="Add a new task…" maxlength="120" autocomplete="off" />
+        <button id="addTodoBtn" class="btn btn-primary">Add</button>
+      </div>
+      <ul id="todoList" class="todo-list" aria-label="Tasks"></ul>
+    </section>
+
+  
+    <section class="card" id="linksSection" aria-label="Quick Links">
+      <h2 class="card-title">🔗 Quick Links</h2>
+      <div class="link-input-row">
+        <input id="linkName" type="text"  placeholder="Label"  maxlength="30" autocomplete="off" />
+        <input id="linkUrl"  type="url"   placeholder="https://…" maxlength="200" autocomplete="off" />
+        <button id="addLinkBtn" class="btn btn-primary">Add</button>
+      </div>
+      <div id="linkGrid" class="link-grid" aria-label="Saved links"></div>
+    </section>
+
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
